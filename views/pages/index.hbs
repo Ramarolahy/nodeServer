@@ -1,0 +1,33 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    {{> head}}
+</head>
+<body class="container">
+    <header>
+        {{> header}}
+    </header>
+    <main>
+        <div class="jumbotron">
+            <h1>This is awesome!</h1>
+            <p>Welcome to templating with EJS! {{enjoyEJS}}</p>
+            
+            <h2>My family</h2>
+            <ul>
+                {{#each family}}
+                    {{#each @index}}
+                <li>Name: {{@key}} Title: {{this}} </li>
+                    {{/each}}
+                {{/each}}
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        {{> footer}}
+    </footer>
+    
+</body>
+</html>
