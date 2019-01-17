@@ -13,9 +13,10 @@ app.set('view engine', 'hbs');
 //==================================
 // USE WHE APP IS IN MAINTENANCE
 // without next(), middlewares block anything after from running
-// app.use((req, res, next) => {
-//     res.render('pages/maintenance');
-// })
+app.use((req, res, next) => {
+    res.render('pages/maintenance');
+    console.log('Site is under maintenance');
+})
 //==================================
 
 
