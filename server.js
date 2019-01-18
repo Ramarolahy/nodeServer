@@ -4,20 +4,22 @@ const express = require('express');
 const path = require('path')
 const hbs = require('hbs');
 const fs = require('fs');
+// process.env stores all environment variables as key:value pairs
+const port =  process.env.PORT || 3000;
 const app = express();
 
 // set the view engine to ejs
 app.set('view engine', 'hbs');
 //app.use(express.static(path.join(__dirname, 'public')));
 
-//==================================
+// ==================================
 // USE WHE APP IS IN MAINTENANCE
 // without next(), middlewares block anything after from running
-app.use((req, res, next) => {
-    res.render('pages/maintenance');
-    console.log('Site is under maintenance');
-})
-//==================================
+// app.use((req, res, next) => {
+//     res.render('pages/maintenance');
+//     console.log('Site is under maintenance');
+// })
+// ==================================
 
 
 // express middleware
@@ -62,6 +64,6 @@ app.get('/about', (req, res) => {
 })
 
 
-app.listen(3000, ()=> {
-    console.log('Server is listening on port 3000')
+app.listen(port, ()=> {
+    console.log(`Server is up on port ${port}`);
 })
