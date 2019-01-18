@@ -62,7 +62,9 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('pages/about');
 })
-
+app.get('/projects', (req, res) => {
+    res.render('pages/projects');
+})
 
 app.listen(port, ()=> {
     console.log(`Server is up on port ${port}`);
